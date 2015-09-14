@@ -1,2 +1,12 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<h2>Current Open Postings</h2>
+<a href="/new">Create New Posting</a>
+
+{{#jobs}}
+  <article class="posting">
+    <h3>{{title}} - {{company}} - Posted {{date}}</h3>
+    <p>
+      {{shortDescription}}
+    </p>
+    <a href="/{{_id}}">View Job</a>
+  </article>
+{{/jobs}}

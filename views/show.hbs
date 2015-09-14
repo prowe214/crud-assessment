@@ -1,0 +1,37 @@
+<a href="/">Back to all postings</a>
+
+{{#job}}
+  <a href="/{{_id}}/edit">Edit This Listing</a>
+  <h2>{{title}} - {{company}}</h2>
+  <p>
+    Posted {{date}}
+  </p>
+  <p>
+    {{shortDescription}}
+  </p>
+  <p>
+    Responsibilities:
+  </p>
+  <p>
+    {{details}}
+  </p>
+  {{#if open}}
+    <a href="/{{_id}}/apply">Apply for Job</a> This posting is still open
+  {{/if}}
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Resume URL</th>
+    </tr>
+    {{#each applicants}}
+      <tr>
+        <td>{{this.name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.resume}}</td>
+        <td><a href="{{_id}}/{{this}}/delete">Delete</a></td>
+      </tr>
+    {{/each}}
+  </table>
+{{/job}}

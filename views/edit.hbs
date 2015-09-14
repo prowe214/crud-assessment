@@ -1,0 +1,27 @@
+{{#job}}
+  <h2>Edit {{title}}</h2>
+
+  <form action="/{{_id}}/edit" method="post">
+    <div class="formrow">
+      <label for="title">Job Title: </label>
+      <input type="text" name="title" value="{{title}}">
+    </div>
+    <div class="formrow">
+      <label for="company">Hiring Company</label>
+      <input type="text" name="company" value="{{company}}">
+    </div>
+    <div class="formrow">
+      <label for="shortDescription">Job Description</label>
+      <textarea name="shortDescription" rows="8" cols="40">{{shortDescription}}</textarea>
+    </div>
+    <div class="formrow">
+      <label for="details">Responsibilities</label>
+      <textarea name="details" rows="8" cols="40">{{details}}</textarea>
+    </div>
+    <div class="formrow">
+      <input type="submit" value="Create Posting">
+      <a href="/">Cancel</a>
+      <a href="/{{_id}}/delete">Delete Posting</a>
+    </div>
+  </form>
+{{/job}}

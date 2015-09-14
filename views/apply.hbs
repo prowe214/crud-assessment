@@ -1,0 +1,22 @@
+{{#job}}
+  <h2>Apply for {{title}} at {{company}}</h2>
+
+  <form action="/{{_id}}" method="post">
+    <div class="formrow">
+      <label for="name">Name</label>
+      <input type="text" name="name">
+    </div>
+    <div class="formrow">
+      <label for="email">Email</label>
+      <input type="email" name="email">
+    </div>
+    <div class="formrow">
+      <label for="resume">Resume URL</label>
+      <input type="text" name="resume">
+    </div>
+    <div class="formrow">
+      <input type="submit" value="Submit Application">
+      <a href="/">cancel</a>
+    </div>
+  </form>
+{{/job}}
