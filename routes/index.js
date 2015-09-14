@@ -29,7 +29,7 @@ router.get('/new', function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
   jobs.find({_id: req.params.id}, function (err, doc) {
-    res.render('show', {job: doc});
+    res.render('show', {job: doc, postId: req.params.id});
   });
 });
 
@@ -65,11 +65,28 @@ router.post('/:id/edit', function(req, res, next) {
   res.redirect('/' + req.params.id);
 });
 
-router.get('/jobs/:id/delete/:applicantId', function (req, res, next) {
-  jobs.update({}, {$pull: {
-    applicants: { _id: req.params.applicantId }
-  }});
-  res.redirect('/');
+router.get('/delete/:id/:applicantId', function (req, res, next) {
+
+  var filteredApplicants = [];
+
+  jobs.find({_id: req.params.id}, function (err, doc) {
+    var originalApplicants = doc[0].applicants;
+    for (var i = 0; i < originalApplicants.length; i++) {
+      if (originalApplicants.applicantId === req.params.applicantId) {
+        i++;
+      } else {
+        filteredApplicants.push(originalApplicants[i]);
+      }
+    }
+  });
+
+  jobs.update({_id: req.params.id},
+    {$set: {
+      applicants: filteredApplicants
+    }
+  });
+
+  res.redirect('/' + req.params.id);
 });
 
 router.get('/:id/delete', function (req, res, next) {
