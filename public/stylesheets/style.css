@@ -30,6 +30,7 @@ article {
 .button {
   padding: 5px;
   color: black;
+  display: inline-block;
   text-decoration: none;
   background: gray;
   border: 1px solid black;

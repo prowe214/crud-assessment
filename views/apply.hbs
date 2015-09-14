@@ -1,18 +1,24 @@
+{{#if error}}
+  <p style="color: red;">
+    Please complete all fields
+  </p>
+{{/if}}
+
 {{#job}}
   <h2>Apply for {{title}} at {{company}}</h2>
 
   <form action="/{{_id}}/apply" method="post">
     <div class="formrow">
       <label for="name">Name</label>
-      <input type="text" name="name">
+      <input type="text" required name="name">
     </div>
     <div class="formrow">
       <label for="email">Email</label>
-      <input type="email" name="email">
+      <input type="email" required name="email">
     </div>
     <div class="formrow">
       <label for="resume">Resume URL</label>
-      <input type="text" name="resume">
+      <input type="text" required name="resume">
     </div>
     <div class="formrow">
       <label for=""></label>
