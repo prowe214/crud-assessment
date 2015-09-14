@@ -43,7 +43,7 @@ If everything looks complete, then commit, push, and submit a pull request. Rais
 
 Open Quicktime Player. In the menubar, navigate to File > New Screen Recording. In the window that appears, click the red record button then click once to begin recording your entire screen. To end the recording, click on the stop button in the menu bar.
 
-Your screen recording should be saved with your name and the assessment number. As an example, I would save the first assessment as `logan_king_1.mov`.
+After stopping your recording, save it by going to File > Export > 480p. Your screen recording should be saved with your name and the assessment number. As an example, I would save the first assessment as `logan_king_1.mov`.
 
 ## User Stories w/ Wireframes
 
