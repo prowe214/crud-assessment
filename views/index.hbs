@@ -1,7 +1,8 @@
+<a href="/new" class="right">Create New Posting</a>
 <h2>Current Open Postings</h2>
-<a href="/new">Create New Posting</a>
 
 {{#jobs}}
+  {{#if open}}
   <article class="posting">
     <h3>{{title}} - {{company}} - Posted {{date}}</h3>
     <p>
@@ -9,4 +10,5 @@
     </p>
     <a href="/{{_id}}">View Job</a>
   </article>
+  {{/if}}
 {{/jobs}}

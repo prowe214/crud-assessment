@@ -19,7 +19,14 @@
       <textarea name="details" rows="8" cols="40">{{details}}</textarea>
     </div>
     <div class="formrow">
-      <input type="submit" value="Create Posting">
+      <label for="open">This posting is...</label>
+      <input type="radio" checked="{{open}}" name="open" value="true">
+        <label for="Open">Open</label>
+      <input type="radio" name="open" value="false">
+        <label for="false">Fulfilled</label>
+    </div>
+    <div class="formrow">
+      <input type="submit" value="Update Posting">
       <a href="/">Cancel</a>
       <a href="/{{_id}}/delete">Delete Posting</a>
     </div>

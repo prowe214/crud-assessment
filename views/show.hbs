@@ -1,7 +1,7 @@
 <a href="/">Back to all postings</a>
 
 {{#job}}
-  <a href="/{{_id}}/edit">Edit This Listing</a>
+  <a class="right" href="/{{_id}}/edit">Edit This Listing</a>
   <h2>{{title}} - {{company}}</h2>
   <p>
     Posted {{date}}
@@ -17,6 +17,10 @@
   </p>
   {{#if open}}
     <a href="/{{_id}}/apply">Apply for Job</a> This posting is still open
+  {{else}}
+    <p>
+      This posting has been fulfilled.
+    </p>
   {{/if}}
 
   <table>
@@ -24,13 +28,14 @@
       <th>Name</th>
       <th>Email</th>
       <th>Resume URL</th>
+      <th></th>
     </tr>
     {{#each applicants}}
       <tr>
         <td>{{this.name}}</td>
         <td>{{this.email}}</td>
         <td>{{this.resume}}</td>
-        <td><a href="{{_id}}/{{this}}/delete">Delete</a></td>
+        <td><a href="/jobs/{{_id}}/delete/{{applicantId}}">Delete</a></td>
       </tr>
     {{/each}}
   </table>
