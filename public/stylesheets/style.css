@@ -74,17 +74,20 @@ table {
   text-align: left;
   margin-top: 15px;
   border-collapse: collapse;
+  border: 1px solid black;
 }
 
 th {
   background: gray;
   margin: 0;
   padding: 3px;
+  border-left: 1px solid black;
 }
 
 td {
   margin: 0;
   padding: 3px;
+  border-left: 1px solid black;
 }
 
 tr:nth-child(even) {
